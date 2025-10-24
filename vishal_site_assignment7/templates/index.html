@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Home • Vishal Sriram{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container grid-2">
+    <div>
+      <h1 class="headline">Vishal Sriram</h1>
+      <p class="subtitle">Product, Data & Enterprise Systems</p>
+      <p class="intro">I’m Vishal Sriram, an MSIS student at IU Kelley with a Finance & Business Analytics background. I build data-driven products and enterprise systems, turning messy business problems into clear, scalable solutions.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="{{ url_for('projects') }}">See Projects</a>
+        <a class="btn outline" href="{{ url_for('render_page', page='resume') }}">Download Resume (PDF)</a>
+      </div>
+    </div>
+    <div class="headshot-wrap">
+      <img src="{{ url_for('images', filename='headshot.jpg') }}" alt="Headshot of Vishal Sriram" class="headshot" />
+    </div>
+  </div>
+</section>
+
+<section class="highlights">
+  <div class="container grid-3">
+    <div class="card">
+      <h3>Enterprise Systems</h3>
+      <p>Logical & physical architectures for SharePoint/.NET and Oracle; SAP S/4HANA simulations across FI/CO/MM/PP/SD.</p>
+    </div>
+    <div class="card">
+      <h3>Data & Finance</h3>
+      <p>Multi-year dataset cleaning (Python/Excel), dashboards, and models that connect insights to ROI.</p>
+    </div>
+    <div class="card">
+      <h3>AI Enablement</h3>
+      <p>Virtual Financial Advisors, AI assistant use-cases, and cloud AI cost modeling with 5‑year NPV/IRR.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

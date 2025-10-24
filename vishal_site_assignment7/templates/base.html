@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Vishal Sriram{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('css', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    {% block head_extra %}{% endblock %}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container row between center">
+        <a class="brand" href="{{ url_for('home') }}">Vishal Sriram</a>
+        <nav class="nav">
+          <a href="{{ url_for('render_page', page='about') }}">About</a>
+          <a href="{{ url_for('render_page', page='resume') }}">Resume</a>
+          <a href="{{ url_for('projects') }}">Projects</a>
+          <a href="{{ url_for('render_page', page='contact') }}">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div class="container row between center">
+        <p>© Vishal Sriram • Product, Data & Enterprise Systems</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/vsriram17/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:vksriram@iu.edu">Email</a>
+          <a href="https://github.com/VishalS17" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </footer>
+    <script defer src="{{ url_for('js', filename='main.js') }}"></script>
+    {% block body_scripts %}{% endblock %}
+  </body>
+</html>

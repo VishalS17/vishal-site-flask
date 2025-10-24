@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Contact • Vishal Sriram{% endblock %}
+{% block content %}
+<section class="page-header"><div class="container"><h1>Contact</h1></div></section>
+
+<section class="container">
+  <p>I’m open to roles in product, data, and tech enablement. Send a note—I'll get back quickly.</p>
+  <form id="contactForm" class="contact-form" novalidate>
+    <div class="form-row">
+      <label for="firstName">First Name</label>
+      <input id="firstName" name="firstName" type="text" required minlength="2" placeholder="First name" aria-required="true" />
+      <small class="error" data-for="firstName" aria-live="polite"></small>
+    </div>
+    <div class="form-row">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" name="lastName" type="text" required minlength="2" placeholder="Last name" aria-required="true" />
+      <small class="error" data-for="lastName" aria-live="polite"></small>
+    </div>
+    <div class="form-row">
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com"
+             pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" aria-required="true" />
+      <small class="error" data-for="email" aria-live="polite"></small>
+    </div>
+    <div class="form-row">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required minlength="8"
+             pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d\W]{8,}$" placeholder="At least 8 characters with a number" aria-required="true" />
+      <small class="error" data-for="password" aria-live="polite"></small>
+    </div>
+    <div class="form-row">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password" required minlength="8" placeholder="Re-enter password" aria-required="true" />
+      <small class="error" data-for="confirmPassword" aria-live="polite"></small>
+    </div>
+    <button class="btn primary" type="submit">Send</button>
+  </form>
+  <p class="muted" style="margin-top:1rem;">This form uses required, type, pattern, and minlength attributes, shows inline errors, and redirects to a Thank You page when valid.</p>
+</section>
+{% endblock %}

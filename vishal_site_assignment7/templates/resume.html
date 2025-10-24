@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Resume • Vishal Sriram{% endblock %}
+{% block content %}
+<section class="page-header"><div class="container"><h1>Resume</h1></div></section>
+<section class="container">
+  <p>Download a copy or view it inline below.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="assets/docs/Vishal_Sriram_Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+    <a class="btn outline" href="https://www.linkedin.com/in/vsriram17/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="pdf-embed">
+    <embed src="assets/docs/Vishal_Sriram_Resume.pdf" type="application/pdf" />
+  </div>
+</section>
+{% endblock %}
