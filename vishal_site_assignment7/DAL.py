@@ -5,6 +5,31 @@ from typing import List, Dict, Optional, Tuple
 
 DB_PATH = Path(__file__).parent / "projects.db"
 
+import os
+import sqlite3
+
+BASE_DIR = os.path.dirname(__file__)
+DB_PATH = os.path.join(BASE_DIR, "projects.db")
+
+def get_connection():
+    return sqlite3.connect(DB_PATH)
+
+def init_db():
+    conn = get_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS projects (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Title TEXT NOT NULL,
+            Description TEXT,
+            ImageFileName TEXT
+        )
+    """)
+    conn.commit()
+    conn.close()
+
+
+
 def get_connection():
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row

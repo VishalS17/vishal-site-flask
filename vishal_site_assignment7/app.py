@@ -1,7 +1,8 @@
 
 from flask import Flask, render_template, send_from_directory, abort, request, redirect, url_for, flash
 import os
-import DAL
+from vishal_site_assignment7 import DAL
+
 
 app = Flask(__name__, template_folder="templates")
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "dev-secret")
